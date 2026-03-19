@@ -20,6 +20,10 @@ app.get('/events', (req, res) => {
     res.json(events);
 });
 
+app.get('/', (req, res) => {
+    res.send("EventConnect API is running 🚀");
+});
+
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
