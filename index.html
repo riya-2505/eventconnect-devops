@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Connect</title>
+</head>
+<body>
+
+<h1>Event Connect</h1>
+
+<form id="eventForm">
+    <input type="text" id="title" placeholder="Event Title" required />
+    <input type="text" id="date" placeholder="Date" required />
+    <button type="submit">Create Event</button>
+</form>
+
+<h2>Events</h2>
+<ul id="eventList"></ul>
+
+<script>
+const form = document.getElementById('eventForm');
+const list = document.getElementById('eventList');
+
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const event = {
+        title: document.getElementById('title').value,
+        date: document.getElementById('date').value
+    };
+
+    await fetch('http://localhost:3000/create-event', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(event)
+    });
+
+    loadEvents();
+});
+
+async function loadEvents() {
+    const res = await fetch('http://localhost:3000/events');
+    const data = await res.json();
+
+    list.innerHTML = '';
+    data.forEach(e => {
+        const li = document.createElement('li');
+        li.textContent = e.title + ' - ' + e.date;
+        list.appendChild(li);
+    });
+}
+
+loadEvents();
+</script>
+
+</body>
+</html>
