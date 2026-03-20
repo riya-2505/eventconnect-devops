@@ -16,3 +16,6 @@ A DevOps-based event management platform.
 ## Run Locally
 npm install
 npm start
+
+## 🌐 Live Demo 🚀
+👉 [Click here to view the live project](https://eventconnect-devops-1.onrender.com/)
