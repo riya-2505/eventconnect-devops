@@ -17,5 +17,6 @@ A DevOps-based event management platform.
 npm install
 npm start
 
-## 🌐 Live Demo 🚀
-👉 [Click here to view the live project](https://eventconnect-devops-1.onrender.com/)
+## 🌐 Live Project 🚀
+👉 Frontend: https://beautiful-llama-aabdd6.netlify.app/
+👉 Backend API: https://eventconnect-devops-1.onrender.com/
