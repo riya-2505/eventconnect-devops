@@ -28,7 +28,7 @@ form.addEventListener('submit', async (e) => {
         date: document.getElementById('date').value
     };
 
-    await fetch('https://eventconnect-devops.onrender.com/create-event', {
+    await fetch('https://eventconnect-devops-1.onrender.com/create-event', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(event)
@@ -38,7 +38,7 @@ form.addEventListener('submit', async (e) => {
 });
 
 async function loadEvents() {
-    const res = await fetch('https://eventconnect-devops.onrender.com/events');
+    const res = await fetch('https://eventconnect-devops-1.onrender.com/events');
     const data = await res.json();
 
     list.innerHTML = '';
